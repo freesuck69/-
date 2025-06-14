@@ -9,27 +9,25 @@
       height: 500px;
     }
   </style>
+
+  <!-- ✅ 반드시 head 안에 SDK 불러오기 -->
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bfdeba4f8231512d5533fff49ef42288"></script>
 </head>
 <body>
-  <h2>우리 학교 근처 전자제품 수거함 위치</h2>
+  <h2>우리 학교 근처 전자제품 수거함</h2>
   <div id="map"></div>
-
-  <!-- ✅ HTTPS로 된 카카오 지도 SDK (GitHub Pages에서 동작하게 함) -->
-  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=bfdeba4f8231512d5533fff49ef42288"></script>
 
   <script>
     var container = document.getElementById('map');
     var options = {
-      center: new kakao.maps.LatLng(37.5665, 126.9780), // 서울 시청 좌표 예시
+      center: new kakao.maps.LatLng(37.5665, 126.9780), // 서울 시청
       level: 3
     };
 
     var map = new kakao.maps.Map(container, options);
 
-    // 예시 마커 추가
-    var markerPosition = new kakao.maps.LatLng(37.5665, 126.9780);
     var marker = new kakao.maps.Marker({
-      position: markerPosition
+      position: new kakao.maps.LatLng(37.5665, 126.9780)
     });
     marker.setMap(map);
   </script>
